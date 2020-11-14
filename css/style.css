@@ -1,0 +1,308 @@
+body {
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+/* HELPERS */
+
+.redTest {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.greenTest {
+    background-color: rgba(0, 255, 0, 0.5);
+}
+
+.blueTest {
+    background-color: rgba(0, 0, 255, 0.5);
+}
+
+/* LAYOUT */
+
+#container {
+    display: flex;
+    /* the default direction is row, justify-content is flex-start*/
+}
+
+section {
+    /* Upon loading, the body has a pedefined width, we can then use % to set sections' width*/
+    width: 50%;
+    /* On the other hand, upon loading, body height is 0. Four our sections to occupy all the available height space, we use the viewport's size as reference: 100vh= 100% of the viewport's height. */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* LEFT SIDE */
+
+#left-side {
+    justify-content: space-between;
+    /* Will cover all the div's available space with the provided image without distorting it. */
+    background-size: cover;
+    background-position: center;
+    /* shortcut 
+    background: url('../images/nicole.jpg') center/cover;
+    */
+    color: white;
+    padding: 3em 2em 1em 2em;
+
+    text-shadow: 1px 1px 3px black;
+}
+
+.nicole {
+    background-image: url('../images/nicole.jpg');
+}
+
+.gabriel {
+    background-image: url('../images/gabriel.jpg');
+}
+
+/* #left-side main {
+    /* with this instruction, main will occupy all remaining space between the header and the footer 
+    flex-grow: 1;
+} */
+
+#left-side .title {
+    text-transform: uppercase;
+    font-size: 1.8em;
+    font-weight: bold;
+    width: 100px;
+    padding-left: 50px;
+    background: url('../images/logo.png') no-repeat;
+    background-size: 35px;
+    background-position: 0 5px;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+    padding: 1.8em 1.1em;
+}
+
+.news--nicole {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: .5px .5px 1px #aaa;
+}
+
+.news__title {
+    font-size: 1.6em;
+    font-weight: bold;
+    padding-bottom: .5em;
+}
+
+.news__title::first-letter {
+    text-transform: capitalize;
+}
+
+.news__title span {
+    font-size: 0.9rem;
+    font-weight: normal;
+    font-style: italic;
+}
+
+.news__text {
+    width: 90%;
+    line-height: 1.4em;
+    font-size: 0.9rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu__link {
+    margin-left: 2em;
+    font-size: 0.9em;
+    transition: .3s;
+}
+
+.menu__link:hover {
+    text-decoration: underline;
+    color: red;
+    text-shadow: .5px .5px 1px white;
+}
+
+/* RIGHT SIDE */
+
+#right-side {
+    background-color: #f9f9f9;
+}
+
+#right-side .title {
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 1em;
+}
+
+#right-side main {
+    display: flex;
+    flex-wrap: wrap;
+    padding-right: .3em;
+    overflow-y: auto;
+}
+
+.article {
+    width: 50%;
+    background-color: #fff;
+    border: 1px solid #eaeaea;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.6em;
+}
+
+.badge--news {
+    background-color: #98dc62;
+}
+
+.badge--team {
+    background-color: #dc5e53;
+}
+
+.badge--work {
+    background-color: #0766f0;
+}
+
+.article__badge {
+    border-radius: 3px;
+    color: white;
+    padding: .3em .5em;
+    font-size: .7em;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 1.3em;
+}
+
+.article__title {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 1.3em 0;
+    line-height: 1.5em;
+}
+
+.article__meta {
+    font-size: .7em;
+}
+
+.meta__icon {
+    width: 25px;
+    /* this property allows us to set where the text will appear relative to the image*/
+    vertical-align: middle;
+}
+
+.meta__author {
+    font-weight: bold;
+    padding-left: .8em;
+}
+
+.meta__date {
+    color: #aaa;
+}
+
+.article__text {
+    line-height: 1.5em;
+    padding: 1em 0;
+    font-size: .9em;
+}
+
+.article__detail {
+    color: #007bff;
+    font-weight: bold;
+    font-size: .8em;
+    text-decoration: underline;
+    transition: .3s;
+    margin-top: auto;
+}
+
+.article__detail:hover {
+    color: #0056b3;
+}
+
+/* FORM */
+#right-side #contact {
+    background-color: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#form {
+    padding: 2em;
+    margin: 2em;
+    border: 1px solid #eaeaea;
+}
+
+#form fieldset {
+    border-left: 1px solid #4cced3;
+    padding: .5em 1em 0;
+    margin-bottom: 2em;
+}
+
+#form legend {
+    margin-left: -.3em;
+    font-size: 1.1em;
+}
+
+.form-row {
+    display: flex;
+    margin-bottom: .4em;
+}
+
+.form-row .label {
+    flex-basis: 30%;
+    margin: 0;
+    padding-right: 3%;
+}
+
+/* all direct children of a class form-row element*/
+/* excepts .label as they have specific rules defined above */
+.form-row>* {
+    flex-basis: 70%;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group>* {
+    margin: 0 .5em 0 0;
+}
+
+#info {
+    flex-basis: 1em;
+}
+
+#contact input[type=text],
+#contact input[type=email],
+#contact textarea,
+#contact select {
+    background-color: #f9f9f9;
+    border: none;
+    border-bottom: 1px solid #4cced3;
+}
+
+#contact input[type=email] {
+    width: 100%;
+}
+
+#contact textarea {
+    padding: .2em;
+    width: 100%;
+}
+
+#contact button {
+    background-color: #4cced3;
+    color: white;
+    font-weight: 700;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.3em;
+    padding: 5px 10px;
+}
